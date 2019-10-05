@@ -1,0 +1,21 @@
+.app-container {
+  margin-top: 10rem;
+  min-height: 100vh;
+}
+
+.app-list {
+  position: relative;
+}
+.app-list .fa-trash {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  color: darkslategrey;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.app-list:hover .fa-trash {
+  opacity: 1;
+  cursor: pointer;
+}
