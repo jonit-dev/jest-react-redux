@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header";
-import "./App.css";
+import "./styles.scss";
 import GiftForm from "../GiftForm/GiftForm";
 
 class App extends Component {
