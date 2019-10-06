@@ -10,7 +10,7 @@ class App extends Component {
         <Header />
         <div className="container app-container">
           <div className="col-md-12">
-            <div className="jumbotron">
+            <div className="jumbotron" data-test="jumbotron">
               <h2>Add your gift</h2>
               <p>Write down your gift and the click the button below</p>
 
