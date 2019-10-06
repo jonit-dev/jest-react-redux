@@ -2,14 +2,21 @@ import React, { Component } from "react";
 import ListItem from "../List/ListItem";
 import { connect } from "react-redux";
 import { addGift, deleteGift } from "../../store/actions/gift.actions";
+import { getPosts } from "../../store/actions/post.actions";
 
-class GiftForm extends Component {
+export class GiftForm extends Component {
   state = {
     gift: {
       description: "",
       person: ""
     }
   };
+
+  componentDidMount() {
+    this.props.getPosts().then(posts => {
+      console.log(this.props.posts);
+    });
+  }
 
   onClearGiftInput() {
     this.setState({
@@ -101,13 +108,14 @@ class GiftForm extends Component {
   }
 }
 const mapStateToProps = state => {
-  return { gifts: state.giftsReducer.gifts };
+  return { gifts: state.giftsReducer.gifts, posts: state.postsReducer.posts };
 };
 
 export default connect(
   mapStateToProps,
   {
     addGift,
-    deleteGift
+    deleteGift,
+    getPosts
   }
 )(GiftForm);
