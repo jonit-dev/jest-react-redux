@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = props => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary" data-test="header">
       <a className="navbar-brand" href="# ">
         Gift Giver
       </a>

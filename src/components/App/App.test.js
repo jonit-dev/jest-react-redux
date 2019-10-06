@@ -1,6 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 import App from "./App";
+import Header from "../Header";
+import TestHelper from "../../../utils/TestHelper";
 
 const renderApp = (props = {}) => {
   const app = shallow(<App {...props} />);
@@ -18,11 +20,17 @@ describe("check App component basic functionality", () => {
   });
 
   it("jumbotron should load correctly", () => {
-    const jumbotron = app.find("[data-test='jumbotron']");
+    const jumbotron = TestHelper.findByTestAttr(app, "jumbotron");
 
     //you can debug a component code
     // console.log(jumbotron.debug());
 
     expect(jumbotron.length).toBe(1);
+  });
+
+  it("Header should render correctly", () => {
+    const header = shallow(<Header />);
+
+    expect(header.length).toBe(1);
   });
 });
